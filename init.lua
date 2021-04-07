@@ -16,6 +16,7 @@ require("gitsigns.lua")
 
 require "colorizer".setup()
 
+
 local cmd = vim.cmd
 local g = vim.g
 local indent = 2
@@ -29,6 +30,10 @@ g.indentLine_enabled = 1
 g.indentLine_char_list = {'▏'}
 
 g.mapleader = " "
+
+
+--- Our clipboard
+vim.api.nvim_command('set clipboard^=unnamed,unnamedplus')
 
 require("treesitter.lua")
 require("mappings.lua")
@@ -64,5 +69,6 @@ require("lspkind").init(
 require('cfg.colors')
 require('cfg.treesitter')
 require('cfg.lspconfig')
--- require('plugins.evilline')
+-- require('cfg.evilline')
+-- require('cfg.spaceline')
 require('cfg.galaxyline')
